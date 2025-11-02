@@ -30,7 +30,7 @@
     <!-- Navigation -->
     <header class="site-header">
       <div class="container nav-wrapper">
-        <div class="logo">Cleios Consulting</div>
+        <div class="logo"><img src="cleios.png" alt="Cleios Consulting" style="max-height: 50px; width: auto;" /></div>
         <nav class="nav-menu">
           <ul>
             <li><a href="#blog">Blog</a></li>
@@ -208,11 +208,12 @@
           et un consultant vous recontactera sous 24 h.
         </p>
         <form
-          action="https://formspree.io/f/mvojzeag"
+          action="https://formspree.io/f/xpwokgvy"
           method="POST"
           class="contact-form"
           data-aos="fade-up"
           data-aos-delay="200"
+          id="contact-form"
         >
           <input type="text" name="Nom" placeholder="Nom" required />
           <input
@@ -220,13 +221,14 @@
             name="Entreprise"
             placeholder="Entreprise"
           />
-          <input type="email" name="Email" placeholder="Email" required />
+          <input type="email" name="email" placeholder="Email" required />
           <textarea
             name="Message"
             placeholder="Votre message"
             required
           ></textarea>
           <button type="submit" class="btn btn-primary">Envoyer</button>
+          <div id="form-status" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 0.5rem;"></div>
         </form>
       </div>
     </section>
@@ -234,7 +236,7 @@
     <!-- Footer -->
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div class="footer-logo">Cleios Consulting</div>
+        <div class="footer-logo"><img src="cleios.png" alt="Cleios Consulting" style="max-height: 40px; width: auto;" /></div>
         <div class="footer-col">
           <h4>Liens</h4>
           <ul>
@@ -254,7 +256,7 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <p>info@cleios.fr<br />+33 1 23 45 67 89</p>
+          <p>lbrisart@cleios.fr<br />+33 7 82 45 00 18</p>
         </div>
       </div>
       <div class="container copyright">
@@ -268,5 +270,48 @@
     </script>
     <script src="app.js"></script>
     <script src="ai-widget.js"></script>
+    <script>
+      // Gestion du formulaire de contact
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = this;
+        const statusDiv = document.getElementById('form-status');
+        const submitButton = form.querySelector('button[type="submit"]');
+        
+        // Désactiver le bouton pendant l'envoi
+        submitButton.disabled = true;
+        submitButton.textContent = 'Envoi en cours...';
+        statusDiv.style.display = 'none';
+        
+        // Envoyer le formulaire
+        fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            statusDiv.style.display = 'block';
+            statusDiv.style.backgroundColor = '#d4edda';
+            statusDiv.style.color = '#155724';
+            statusDiv.style.border = '1px solid #c3e6cb';
+            statusDiv.textContent = '✓ Message envoyé avec succès ! Nous vous recontacterons sous 24h.';
+            form.reset();
+          } else {
+            throw new Error('Erreur lors de l\'envoi');
+          }
+        }).catch(error => {
+          statusDiv.style.display = 'block';
+          statusDiv.style.backgroundColor = '#f8d7da';
+          statusDiv.style.color = '#721c24';
+          statusDiv.style.border = '1px solid #f5c6cb';
+          statusDiv.textContent = '✗ Une erreur est survenue. Veuillez réessayer ou nous contacter directement.';
+        }).finally(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Envoyer';
+        });
+      });
+    </script>
   </body>
 </html>

@@ -123,6 +123,14 @@ a {
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 50px;
+  width: auto;
+  display: block;
 }
 
 .nav-menu ul {
@@ -514,6 +522,14 @@ a {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-height: 40px;
+  width: auto;
+  display: block;
 }
 
 .footer-col h4 {

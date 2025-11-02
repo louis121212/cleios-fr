@@ -1,44 +1,44 @@
-# Cleios Consulting Website
+# Site web Cleios Consulting
 
-This repository contains the source code for the Cleios Consulting website (https://cleios.fr), a professional and modern site for a compliance and ESG/CSRD consulting firm. It is built with HTML, CSS and vanilla JavaScript and can be deployed for free via GitHub Pages with a custom domain.
+Ce dépôt contient le code source du site web Cleios Consulting (https://cleios.fr), un site professionnel et moderne pour un cabinet de conseil en conformité et ESG/CSRD. Il est construit avec HTML, CSS et JavaScript vanilla et peut être déployé gratuitement via GitHub Pages avec un domaine personnalisé.
 
-## Features
+## Fonctionnalités
 
-- Responsive design with hero section, services (compliance, ESG/CSRD, e facturation and AI automation), about section, and contact form.
-- AI assistant widget that engages visitors to answer questions and help them understand your offerings.
-- Compliance messaging based on up‑to‑date regulations, including NIS2 risk assessment requirements【576106472859696†L141-L160】, CSRD phased implementation【855830170978761†L598-L612】 and Romania's e‑Factură mandate【169194903531349†L144-L172】.
-- SEO‑optimized structure with meta tags, OpenGraph and sitemap.
-- Formspree integration for lead capture (replace `your_form_id` with your actual form ID).
-- Ready-to-use Cloudflare Worker script for proxying chat requests to OpenAI (keeps your API key private).
+- Design responsive avec section hero, services (conformité, ESG/CSRD, e‑facturation et automatisation IA), section à propos et formulaire de contact.
+- Widget d'assistant IA qui engage les visiteurs pour répondre à leurs questions et les aider à comprendre vos offres.
+- Messages de conformité basés sur des réglementations à jour, incluant les exigences d'évaluation des risques NIS2, la mise en œuvre progressive CSRD et le mandat e‑Factură de la Roumanie.
+- Structure optimisée pour le SEO avec balises meta, OpenGraph et sitemap.
+- Intégration Formspree pour la capture de leads (remplacez `your_form_id` par votre ID de formulaire réel).
+- Script Cloudflare Worker prêt à l'emploi pour faire proxy des requêtes de chat vers OpenAI (garde votre clé API privée).
 
-## Deployment
+## Déploiement
 
-1. In this repository, go to **Settings → Pages** and set the source to the `main` branch with `/` (root).  
-2. Connect your custom domain (e.g., `cleios.fr`) in the same **Pages** settings. GitHub will show the DNS records you need to add at your domain registrar (Amen).  
-3. Update your DNS records at Amen to the values provided by GitHub. DNS changes can take some time to propagate.  
-4. After propagation, your site will be live at your domain.
+1. Dans ce dépôt, allez dans **Paramètres → Pages** et définissez la source sur la branche `main` avec `/` (racine).  
+2. Connectez votre domaine personnalisé (par ex., `cleios.fr`) dans les mêmes **Pages** paramètres. GitHub affichera les enregistrements DNS que vous devez ajouter chez votre bureau d'enregistrement de domaine (Amen).  
+3. Mettez à jour vos enregistrements DNS chez Amen aux valeurs fournies par GitHub. Les changements DNS peuvent prendre un certain temps pour se propager.  
+4. Après la propagation, votre site sera en ligne sur votre domaine.
 
-## AI Assistant
+## Assistant IA
 
-The AI assistant appears on each page and allows visitors to chat about your services. It is implemented in `ai-widget.js`. To use it:
+L'assistant IA apparaît sur chaque page et permet aux visiteurs de discuter de vos services. Il est implémenté dans `ai-widget.js`. Pour l'utiliser :
 
-1. Deploy the Cloudflare Worker in `cloudflare/worker.js` to your Cloudflare account.  
-2. Set an environment variable `OPENAI_API_KEY` in the Worker with your OpenAI API key.  
-3. Note the deployed Worker URL (for example `https://cleios-assistant.workers.dev`) and set the `data-endpoint` attribute on the `.chat-button` element in `index.html` to this URL.  
-4. The assistant will now relay questions from visitors to your Worker and return answers powered by OpenAI.
+1. Déployez le Cloudflare Worker dans `cloudflare/worker.js` sur votre compte Cloudflare.  
+2. Définissez une variable d'environnement `OPENAI_API_KEY` dans le Worker avec votre clé API OpenAI.  
+3. Notez l'URL du Worker déployé (par exemple `https://cleios-assistant.workers.dev`) et définissez l'attribut `data-endpoint` sur l'élément `.chat-button` dans `index.html` sur cette URL.  
+4. L'assistant relaya désormais les questions des visiteurs vers votre Worker et retournera des réponses alimentées par OpenAI.
 
-## Contact Form
+## Formulaire de contact
 
-The contact form sends submissions to Formspree. Create a form at https://formspree.io, get your form ID, and replace `your_form_id` in the `<form action="https://formspree.io/f/your_form_id" ...>` attribute in `index.html`.
+Le formulaire de contact envoie les soumissions à Formspree. Créez un formulaire sur https://formspree.io, obtenez votre ID de formulaire et remplacez `your_form_id` dans l'attribut `<form action="https://formspree.io/f/your_form_id" ...>` dans `index.html`.
 
-## Development
+## Développement
 
-If you'd like to make changes:
+Si vous souhaitez apporter des modifications :
 
-1. Fork or clone this repository.  
-2. Edit the HTML, CSS, or JS files as needed.  
-3. Commit and push your changes to GitHub. Pages will automatically rebuild.
+1. Forkez ou clonez ce dépôt.  
+2. Modifiez les fichiers HTML, CSS ou JS selon vos besoins.  
+3. Commitez et poussez vos modifications vers GitHub. Pages reconstruira automatiquement.
 
-## License
+## Licence
 
-This project is provided for educational and demonstration purposes.
+Ce projet est fourni à des fins éducatives et de démonstration.

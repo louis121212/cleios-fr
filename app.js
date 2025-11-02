@@ -1,16 +1,16 @@
 /*
- * Cleios Consulting – Main application
+ * Cleios Consulting – Application principale
  *
- * This script initialises the chat widget after the DOM has loaded and
- * implements minor enhancements (e.g. smooth scroll for anchor links).
+ * Ce script initialise le widget de chat après le chargement du DOM et
+ * implémente des améliorations mineures (ex. défilement fluide pour les liens d'ancrage).
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialise the AI chat widget
+  // Initialiser le widget de chat IA
   if (typeof window.initChatWidget === 'function') {
     window.initChatWidget('ai-chat-widget');
   }
-  // Smooth scroll for anchor links within the page
+  // Défilement fluide pour les liens d'ancrage dans la page
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach((link) => {
     link.addEventListener('click', (e) => {

@@ -1,26 +1,26 @@
 /*
- * Cleios Consulting – AI chat widget
+ * Cleios Consulting – Widget de chat IA
  *
- * This script generates a simple chat interface and connects it to a
- * serverless API endpoint (such as a Cloudflare Worker) that proxies
- * requests to an AI service (e.g. OpenAI). The endpoint should accept
- * a JSON payload `{ message: string }` and return `{ reply: string }`.
+ * Ce script génère une interface de chat simple et la connecte à un
+ * endpoint API serverless (tel qu'un Cloudflare Worker) qui fait proxy
+ * des requêtes vers un service IA (ex. OpenAI). L'endpoint doit accepter
+ * un payload JSON `{ message: string }` et retourner `{ reply: string }`.
  *
- * The widget does not store messages permanently and does not expose
- * the API key to the client; the key must remain on the server side.
+ * Le widget ne stocke pas les messages de manière permanente et n'expose pas
+ * la clé API au client ; la clé doit rester côté serveur.
  */
 
 (function () {
   /**
-   * Initialise the chat widget inside the given element ID.
+   * Initialise le widget de chat dans l'élément avec l'ID donné.
    * @param {string} containerId
    */
   function initChatWidget(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
-    // Clear existing content
+    // Effacer le contenu existant
     container.innerHTML = '';
-    // Create chat UI elements
+    // Créer les éléments de l'interface de chat
     const chatBox = document.createElement('div');
     chatBox.className = 'chat-box';
     const messagesList = document.createElement('div');
@@ -41,7 +41,7 @@
     chatBox.appendChild(form);
     container.appendChild(chatBox);
 
-    // Apply basic styles
+    // Appliquer les styles de base
     const style = document.createElement('style');
     style.textContent = `
       .chat-box {
@@ -84,7 +84,7 @@
     `;
     document.head.appendChild(style);
 
-    // Add event listener
+    // Ajouter l'écouteur d'événement
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const text = input.value.trim();
@@ -102,7 +102,7 @@
           throw new Error('Erreur de réponse du serveur');
         }
         const data = await res.json();
-        // Remove loading message
+        // Retirer le message de chargement
         const loading = messagesList.querySelector('.message.ai.loading');
         if (loading) loading.remove();
         appendMessage(messagesList, data.reply || 'Pas de réponse', 'ai');
@@ -115,7 +115,7 @@
   }
 
   /**
-   * Append a message to the messages list.
+   * Ajouter un message à la liste des messages.
    * @param {HTMLElement} list
    * @param {string} text
    * @param {'user'|'ai'} type
@@ -130,6 +130,6 @@
     list.scrollTop = list.scrollHeight;
   }
 
-  // Expose init globally for app.js
+  // Exposer init globalement pour app.js
   window.initChatWidget = initChatWidget;
 })();

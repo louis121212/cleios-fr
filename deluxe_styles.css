@@ -543,6 +543,244 @@ a {
   color: #9db3c8;
 }
 
+/* Blog Article Page */
+.blog-article {
+  padding: 3rem 0 6rem;
+  background-color: var(--clr-bg);
+}
+
+.article-header {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--clr-secondary);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.back-link:hover {
+  color: var(--clr-primary);
+  text-decoration: underline;
+}
+
+.article-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-dark);
+}
+
+.article-meta {
+  color: var(--clr-muted);
+  font-size: 0.95rem;
+}
+
+.article-image {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.article-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.article-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.article-content h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--clr-dark);
+}
+
+.article-content h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--clr-dark);
+}
+
+.article-content ul {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--clr-muted);
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.article-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.article-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* Legal Pages */
+.legal-page {
+  padding: 3rem 0 6rem;
+  background-color: var(--clr-bg);
+}
+
+.legal-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--clr-dark);
+  text-align: center;
+}
+
+.last-updated {
+  text-align: center;
+  color: var(--clr-muted);
+  font-size: 0.95rem;
+  margin-bottom: 3rem;
+}
+
+.legal-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.legal-content h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--clr-dark);
+}
+
+.legal-content h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--clr-dark);
+}
+
+.legal-content ul {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--clr-muted);
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.legal-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.legal-content a {
+  color: var(--clr-secondary);
+  text-decoration: underline;
+}
+
+.legal-content a:hover {
+  color: var(--clr-primary);
+}
+
+/* Follow Page */
+.deluxe-follow-page {
+  padding: 3rem 0 6rem;
+  background-color: var(--clr-bg);
+}
+
+.deluxe-follow-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.deluxe-follow-page .follow-cards {
+  margin-bottom: 4rem;
+}
+
+.deluxe-follow-page .follow-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.deluxe-follow-page .follow-card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.deluxe-follow-page .follow-card p {
+  color: var(--clr-muted);
+  font-size: 0.95rem;
+}
+
+.follow-social {
+  text-align: center;
+  margin: 4rem 0;
+  padding: 3rem;
+  background-color: var(--clr-light);
+  border-radius: var(--radius);
+}
+
+.follow-social h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.follow-social p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.newsletter-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form .contact-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  flex: 1 1 250px;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.follow-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem;
+  background-color: var(--clr-light);
+  border-radius: var(--radius);
+}
+
+.follow-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.follow-cta p {
+  margin-bottom: 2rem;
+  color: var(--clr-muted);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-grid,
@@ -558,5 +796,20 @@ a {
   .service-img,
   .service-text {
     flex: 1 1 100%;
+  }
+  .article-header h1,
+  .legal-page h1,
+  .deluxe-follow-page h1 {
+    font-size: 2rem;
+  }
+  .article-content h2,
+  .legal-content h2 {
+    font-size: 1.5rem;
+  }
+  .newsletter-form .contact-form {
+    flex-direction: column;
+  }
+  .newsletter-form input {
+    width: 100%;
   }
 }
